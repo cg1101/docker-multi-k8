@@ -17,8 +17,8 @@ docker push "${DOCKER_ID}/multi-server:${SHA}"
 docker push "${DOCKER_ID}/multi-worker:latest"
 docker push "${DOCKER_ID}/multi-worker:${SHA}"
 
-kubectl apply -f k8s
+# kubectl apply -f k8s
 
-kubectl set image deployments/server-deploy server={$DOCKER_ID}/multi-server:${SHA}
-kubectl set image deployments/client-deploy client={$DOCKER_ID}/multi-client:${SHA}
-kubectl set image deployments/worker-deploy worker={$DOCKER_ID}/multi-worker:${SHA}
+# kubectl set image deployments/server-deploy server={$DOCKER_ID}/multi-server:${SHA}
+# kubectl set image deployments/client-deploy client={$DOCKER_ID}/multi-client:${SHA}
+# kubectl set image deployments/worker-deploy worker={$DOCKER_ID}/multi-worker:${SHA}

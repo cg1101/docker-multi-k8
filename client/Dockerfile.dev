@@ -5,4 +5,12 @@ WORKDIR /app
 COPY ./package.json ./
 RUN npm install
 COPY . .
+
+
+# # https://stackoverflow.com/questions/55926705/docker-error-eacces-permission-denied-mkdir-project-node-modules-cache
+# RUN npm config set unsafe-perm true
+RUN chown node:node node_modules
+# RUN chmod go+w node_modules
+# # https://docs.npmjs.com/cli/v7/using-npm/config
+
 CMD ["npm", "run", "start"]

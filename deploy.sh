@@ -21,7 +21,7 @@ docker push "${DOCKER_ID}/multi-worker:latest"
 docker push "${DOCKER_ID}/multi-worker:${SHA}"
 
 echo "update kubernetes ... "
-kubectl apply -f k8s
+kubectl apply -f k8s/*.yaml
 
 echo "set docker image imperatively .... "
 kubectl set image deployments/server-deploy server={$DOCKER_ID}/multi-server:${SHA}

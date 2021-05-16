@@ -35,8 +35,8 @@ kubectl apply -f k8s/server-deployment.yaml
 kubectl apply -f k8s/worker-deployment.yaml
 
 echo "set docker image imperatively .... "
-kubectl set image deployments/server-deployment server={$DOCKER_ID}/multi-server:${SHA}
-kubectl set image deployments/client-deployment client={$DOCKER_ID}/multi-client:${SHA}
-kubectl set image deployments/worker-deployment worker={$DOCKER_ID}/multi-worker:${SHA}
+kubectl set image deployments/server-deployment server=${$DOCKER_ID}/multi-server:${SHA}
+kubectl set image deployments/client-deployment client=${$DOCKER_ID}/multi-client:${SHA}
+kubectl set image deployments/worker-deployment worker=${$DOCKER_ID}/multi-worker:${SHA}
 
 echo "deployment is done"

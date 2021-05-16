@@ -1,6 +1,6 @@
 # https://cert-manager.io/docs/concepts/certificate/
 
-apiVersion: certmanager.k8s.io/v1alpha1
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: bareena-com-tls
@@ -13,10 +13,3 @@ spec:
   dnsNames:
     - bareena.com
     - www.bareena.com
-  acme:
-    config:
-      - http01:
-          ingressClass: nginx
-        domains:
-          - bareena.com
-          - www.bareena.com

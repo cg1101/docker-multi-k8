@@ -8,7 +8,7 @@ spec:
   secretName: bareena-com
   issuerRef:
     name: letsencrypt-prod
-    kind: ClusterIssuer
+    kind: Issuer
   commonName: bareena.com
   dnsNames:
     - bareena.com

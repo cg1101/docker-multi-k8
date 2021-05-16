@@ -25,7 +25,7 @@ echo "update kubernetes ... "
 kubectl apply -f k8s/client-cluster-ip-service.yaml
 kubectl apply -f k8s/client-deployment.yaml
 kubectl apply -f k8s/database-cluster-volume-claim.yaml
-kubectl apply -f k8s/local-ingress-service.yml
+kubectl apply -f k8s/gce-ingress-service.yml
 kubectl apply -f k8s/postgres-cluster-ip-service.yaml
 kubectl apply -f k8s/postgres-deployment.yaml
 kubectl apply -f k8s/redis-cluster-ip-service.yaml

@@ -21,7 +21,18 @@ docker push "${DOCKER_ID}/multi-worker:latest"
 docker push "${DOCKER_ID}/multi-worker:${SHA}"
 
 echo "update kubernetes ... "
-kubectl apply -f k8s/*.yaml
+# kubectl apply -f k8s
+kubectl apply -f k8s/client-cluster-ip-service.yaml
+kubectl apply -f k8s/client-deployment.yaml
+kubectl apply -f k8s/database-cluster-volume-claim.yaml
+kubectl apply -f k8s/local-ingress-service.yml
+kubectl apply -f k8s/postgres-cluster-ip-service.yaml
+kubectl apply -f k8s/postgres-deployment.yaml
+kubectl apply -f k8s/redis-cluster-ip-service.yaml
+kubectl apply -f k8s/redis-deployment.yaml
+kubectl apply -f k8s/server-cluster-ip-service.yaml
+kubectl apply -f k8s/server-deployment.yaml
+kubectl apply -f k8s/worker-deployment.yaml
 
 echo "set docker image imperatively .... "
 kubectl set image deployments/server-deploy server={$DOCKER_ID}/multi-server:${SHA}
